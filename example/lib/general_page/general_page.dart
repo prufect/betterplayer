@@ -38,12 +38,12 @@ class _GeneralPageState extends State<GeneralPage> {
     _betterPlayerController = BetterPlayerController(
         BetterPlayerConfiguration(
           controlsConfiguration: BetterPlayerControlsConfiguration(
-            enableProgressText: true,
-            enablePlaybackSpeed: true,
-            enableSubtitles: true,
-            enableCloseButton: true,
-            onClose: () => print("Close"),
-          ),
+              enableProgressText: true,
+              enablePlaybackSpeed: true,
+              enableSubtitles: true,
+              enableCloseButton: true,
+              onClose: () => print("Close"),
+              controlTopBarSpacing: 8),
         ),
         betterPlayerDataSource: dataSource);
     _betterPlayerController.addEventsListener((event) {

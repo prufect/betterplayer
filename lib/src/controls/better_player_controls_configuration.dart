@@ -80,6 +80,9 @@ class BetterPlayerControlsConfiguration {
   ///Control bar height
   final double controlBarHeight;
 
+  ///Control top bar spacing
+  final double controlTopBarSpacing;
+
   ///Live text color;
   final Color liveTextColor;
 
@@ -149,6 +152,7 @@ class BetterPlayerControlsConfiguration {
     this.showControls = true,
     this.showControlsOnInitialize = true,
     this.controlBarHeight = 48.0,
+    this.controlTopBarSpacing = 8.0,
     this.liveTextColor = Colors.red,
     this.enableOverflowMenu = true,
     this.enablePlaybackSpeed = true,

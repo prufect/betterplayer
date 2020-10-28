@@ -496,14 +496,18 @@ class _BetterPlayerCupertinoControlsState
           Spacer(),
           _controlsConfiguration.enableMute
               ? Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: EdgeInsets.only(
+                    left: _controlsConfiguration.controlTopBarSpacing,
+                  ),
                   child: _buildMuteButton(_controller, backgroundColor,
                       iconColor, barHeight, buttonPadding),
                 )
               : const SizedBox(),
           _controlsConfiguration.enableOverflowMenu
               ? Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: EdgeInsets.only(
+                    left: _controlsConfiguration.controlTopBarSpacing,
+                  ),
                   child: _buildMoreButton(
                     _controller,
                     backgroundColor,
@@ -515,7 +519,9 @@ class _BetterPlayerCupertinoControlsState
               : const SizedBox(),
           _controlsConfiguration.enableCloseButton
               ? Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: EdgeInsets.only(
+                    left: _controlsConfiguration.controlTopBarSpacing,
+                  ),
                   child: _buildCloseButton(
                     backgroundColor,
                     iconColor,
