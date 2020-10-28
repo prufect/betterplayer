@@ -76,16 +76,18 @@ class _BetterPlayerCupertinoControlsState
         },
         child: AbsorbPointer(
           absorbing: _hideStuff,
-          child: Column(
-            children: <Widget>[
-              _buildTopBar(
-                  backgroundColor, iconColor, barHeight, buttonPadding),
-              isLoading(_latestValue)
-                  ? Expanded(child: Center(child: _buildLoadingWidget()))
-                  : _buildHitArea(),
-              _buildNextVideoWidget(),
-              _buildBottomBar(backgroundColor, iconColor, barHeight),
-            ],
+          child: SafeArea(
+            child: Column(
+              children: <Widget>[
+                _buildTopBar(
+                    backgroundColor, iconColor, barHeight, buttonPadding),
+                isLoading(_latestValue)
+                    ? Expanded(child: Center(child: _buildLoadingWidget()))
+                    : _buildHitArea(),
+                _buildNextVideoWidget(),
+                _buildBottomBar(backgroundColor, iconColor, barHeight),
+              ],
+            ),
           ),
         ),
       ),
