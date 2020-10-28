@@ -41,6 +41,8 @@ class _GeneralPageState extends State<GeneralPage> {
             enableProgressText: true,
             enablePlaybackSpeed: true,
             enableSubtitles: true,
+            enableCloseButton: true,
+            onClose: () => print("Close"),
           ),
         ),
         betterPlayerDataSource: dataSource);

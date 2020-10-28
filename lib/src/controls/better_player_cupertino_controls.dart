@@ -261,6 +261,41 @@ class _BetterPlayerCupertinoControlsState
     );
   }
 
+  GestureDetector _buildCloseButton(
+    Color backgroundColor,
+    Color iconColor,
+    double barHeight,
+    double buttonPadding,
+  ) {
+    return GestureDetector(
+      onTap: _controlsConfiguration.onClose,
+      child: AnimatedOpacity(
+        opacity: _hideStuff ? 0.0 : 1.0,
+        duration: _controlsConfiguration.controlsHideTime,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+          child: BackdropFilter(
+            filter: ui.ImageFilter.blur(sigmaX: 10.0),
+            child: Container(
+              color: backgroundColor,
+              child: Container(
+                height: barHeight,
+                padding: EdgeInsets.symmetric(
+                  horizontal: buttonPadding,
+                ),
+                child: Icon(
+                  _controlsConfiguration.closeIcon,
+                  color: iconColor,
+                  size: 16.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   GestureDetector _buildMoreButton(
     VideoPlayerController controller,
     Color backgroundColor,
@@ -466,6 +501,14 @@ class _BetterPlayerCupertinoControlsState
           _controlsConfiguration.enableOverflowMenu
               ? _buildMoreButton(
                   _controller,
+                  backgroundColor,
+                  iconColor,
+                  barHeight,
+                  buttonPadding,
+                )
+              : const SizedBox(),
+          _controlsConfiguration.enableCloseButton
+              ? _buildCloseButton(
                   backgroundColor,
                   iconColor,
                   barHeight,

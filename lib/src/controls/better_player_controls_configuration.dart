@@ -96,6 +96,9 @@ class BetterPlayerControlsConfiguration {
   ///Flag used to show/hide qualities
   final bool enableQualities;
 
+  ///Flag used to enable close button
+  final bool enableCloseButton;
+
   ///Custom items of overflow menu
   final List<BetterPlayerOverflowMenuItem> overflowMenuCustomItems;
 
@@ -111,8 +114,14 @@ class BetterPlayerControlsConfiguration {
   ///Icon of the qualities menu item from overflow menu
   final IconData qualitiesIcon;
 
+  ///Icon of the close button
+  final IconData closeIcon;
+
   ///Color of overflow menu icons
   final Color overflowMenuIconsColor;
+
+  ///Callback for close button (if enabled)
+  final Function onClose;
 
   const BetterPlayerControlsConfiguration({
     this.controlBarColor = Colors.black87,
@@ -150,7 +159,10 @@ class BetterPlayerControlsConfiguration {
     this.playbackSpeedIcon = Icons.shutter_speed,
     this.qualitiesIcon = Icons.hd,
     this.subtitlesIcon = Icons.text_fields,
+    this.closeIcon = Icons.close,
     this.overflowMenuIconsColor = Colors.black,
+    this.enableCloseButton = false,
+    this.onClose,
   });
 
   factory BetterPlayerControlsConfiguration.white() {
