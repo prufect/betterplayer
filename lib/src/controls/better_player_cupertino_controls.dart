@@ -493,26 +493,35 @@ class _BetterPlayerCupertinoControlsState
               ? _buildExpandButton(
                   backgroundColor, iconColor, barHeight, buttonPadding)
               : const SizedBox(),
-          Expanded(child: Container()),
+          Spacer(),
           _controlsConfiguration.enableMute
-              ? _buildMuteButton(_controller, backgroundColor, iconColor,
-                  barHeight, buttonPadding)
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: _buildMuteButton(_controller, backgroundColor,
+                      iconColor, barHeight, buttonPadding),
+                )
               : const SizedBox(),
           _controlsConfiguration.enableOverflowMenu
-              ? _buildMoreButton(
-                  _controller,
-                  backgroundColor,
-                  iconColor,
-                  barHeight,
-                  buttonPadding,
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: _buildMoreButton(
+                    _controller,
+                    backgroundColor,
+                    iconColor,
+                    barHeight,
+                    buttonPadding,
+                  ),
                 )
               : const SizedBox(),
           _controlsConfiguration.enableCloseButton
-              ? _buildCloseButton(
-                  backgroundColor,
-                  iconColor,
-                  barHeight,
-                  buttonPadding,
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: _buildCloseButton(
+                    backgroundColor,
+                    iconColor,
+                    barHeight,
+                    buttonPadding,
+                  ),
                 )
               : const SizedBox(),
         ],
